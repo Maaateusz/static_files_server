@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  app:
+    # a service called app
+    # that runs the image app with container name app
+    container_name: static_files_server
+    image: static_files_server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    # use port 8080 to listen for requests
+    ports:
+      - "8080:8080"
